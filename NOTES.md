@@ -509,7 +509,6 @@ World!
     >>>print(stuff)
 X<br>
 Y
-    
 
     >>>len(stuff)
 3
@@ -579,9 +578,7 @@ Line Count: 132045
         print(line)
 This will print out all of the lines that do contain that string, because if it doesn't contain that string, it's just going to continue, but if it does, it's going to print that line. 
 ----
-### **try** and **except** 
-
-
+### **try** and **except**
    
     fname = input('Enter the file name: ')
     try:
@@ -618,13 +615,11 @@ Blastoff!
 ---
 ### LISTS AND DEFINITE LOOPS
 
-
-    friends = ['Joseph', 'Glenn', 'Sally']
-    for friend in friends :
-        print('Happy New Year:', friend)
-    print('Done!')
+    >>>friends = ['Joseph', 'Glenn', 'Sally']
+    >>>for friend in friends :
+        >>>print('Happy New Year:', friend)
+    >>>print('Done!')
 or
-
 
     z = ['Joseph', 'Glenn', 'Sally']
     for x in z:
@@ -685,7 +680,6 @@ banana
     print(len(friends))
 3
 
-
     >>>print(list(range(len(friends))))
 [0, 1, 2]
 ---
@@ -726,6 +720,176 @@ banana
     >>>t{:}
 [9, 41, 12, 3, 74, 15]
 ----
+
+### LIST METHODS
+
+
+    >>>x = list()
+    >>>type()
+<type 'list'>
+
+
+    >>>dir(x)
+[...'append', 'count', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+---
+
+### BUILDING A LIST FROM SCRATCH
+
+- We can create an empty list and then add elements using the **append** method. 
+- The **list** stays in order and new elements are added at the end of the list. 
+
+
+    >>>stuff = list()
+    >>>stuff.append('book')
+    >>>stuff.append(99)
+    >>>print(stuff)
+['book', 99]
+
+
+    >>>stuff.append('cookie')
+    >>>print(stuff)
+['book', 99, 'cookie']
+
+---
+
+### IS SOMETHING IN A LIST?
+
+    
+    >>>some = [1, 9, 21, 10, 16]
+    9 in some
+True
+
+
+    >>>20 not in some
+True
+---
+
+### SORTING LISTS
+
+
+    >>>friends = 'Joseph', 'Glenn', 'Sally']
+    >>>friend.sort()
+    >>>print(friends)
+['Glenn', 'Joseph', 'Sally']
+
+
+
+    >>>print(friends[1])
+Joseph
+
+----
+
+### BUILT IN FUNCTIONS AND LISTS
+
+
+    >>>nums = [3, 41, 12, 9, 74, 15]
+    >>>>print(len(nums))
+6
+
+    >>>print(max(nums))
+74
+
+    >>>print(min(nums))
+3
+
+    >>>print(sum(nums))
+154
+
+    >>>print(sum(nums)/len(nums))
+25.6
+
+---
+
+    >>>total = 0
+       count = 0
+       while True:
+           inp = input('Enter a number:')
+           if inp == 'done': break
+           value = float(inp)
+           total = total + value
+           count = count + 1
+Enter a number: 3<br>
+Enter a number: 9<br>
+Enter a number: 5<br>
+Enter a number: done
+
+
+    >>>average = total / count
+       print('Average:', average)
+Average: 5.666666666667
+
+### **OR**
+
+    >>>numlist = list()
+       while True:
+           inp = input('Enter a number:')
+           if inp == 'done': break
+           value = float(inp)
+           numlist.append(value)
+Enter a number: 3<br>
+Enter a number: 9<br>
+Enter a number: 5<br>
+Enter a number: done
+
+       average = sum(numlist) / len(numlist)
+       print('Average:', average)
+Average: 5.666666666667
+
+---
+
+### STRINGS & LISTS
+
+    >>>abc = 'With three words'
+    >>>stuff = abc.split()
+    >>>print(stuff)
+['With', 'three', 'words']
+
+    >>>print(len(stuff))
+3
+
+    >>>print(stuff[0])
+With
+
+    >>>for w in stuff:
+       print(w)
+With<br>
+three<br>
+words<br>
+
+    >>>line = 'A lot       of spaces'
+    >>>ect = line.split()
+    >>>print(ect)
+['A', 'lot', 'of', 'spaces']
+
+    >>>line = first;second;third'
+    >>>thing = line.split()
+    >>>print(thing)
+['first;second;third']
+    
+    >>>print(len(thing))
+1
+
+    >>>thing = line.split(';')
+    >>>print(thing)
+['first', 'second', 'third']
+
+    >>>print(len(thing))
+3
+
+----
+
+### DOUBLE SPLIT PATTERN
+
+From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
+
+    >>>words = line.split()
+    >>>email = words[1]
+    >>>pieces = email.split('@')
+    >>>print(email)
+    >>>print(pieces)
+stephen.marquard@uct.ac.za<br>
+['stephen.marquard', 'uct.ac.za']
 
 
 
