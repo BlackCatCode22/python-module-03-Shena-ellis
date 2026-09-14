@@ -657,7 +657,7 @@ banana
 
 - Lists are *mutable*. We can change an element of a list using the index operator. 
 
-
+---
     >>>lotto = [2, 14, 26, 41, 63]
     >>>print(lotto)
 [2, 14, 26, 41, 63]
@@ -673,7 +673,7 @@ banana
 
 - The **range** function returns a list of numbers that range from zero to one less than the parameter. 
 
-
+---
     >>>print(range(4))
 [0, 1, 2, 3]
 
@@ -690,7 +690,7 @@ banana
 
 - We can create new lists by adding two existing lists together.
 
-
+---
     >>>a = [1, 2, 3]
     >>>b = [4, 5, 6]
     >>>c = a + b
@@ -700,7 +700,6 @@ banana
 
     >>>print(a)
 [1, 2, 3]
-
 ----
 
 ### SLICING LISTS USING **:**
