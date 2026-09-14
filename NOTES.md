@@ -175,6 +175,7 @@ the *values* we are looking for.
         if value > 20:
             print('Large number', value)
     print('FILTERING')
+
 ----
 
 ## SEARCH USING A BOOLEAN VARIABLE
@@ -300,6 +301,7 @@ n
 
 - Using a **while** statement and **iteration variable** and the **len** function, we can 
 construct a loop to look at each of the letters in a string individually. 
+
 
 
     fruit = 'banana'
@@ -633,7 +635,7 @@ Done!
 
 ### LOOKING INSIDE LISTS
  
-
+---
     >>>friends = ['Joseph', 'Glenn', 'Sally']
     >>>print(friends[1])
 Glenn
@@ -739,18 +741,16 @@ banana
 - We can create an empty list and then add elements using the **append** method. 
 - The **list** stays in order and new elements are added at the end of the list. 
 
-
+---
     >>>stuff = list()
     >>>stuff.append('book')
     >>>stuff.append(99)
     >>>print(stuff)
 ['book', 99]
-
-
+    
     >>>stuff.append('cookie')
     >>>print(stuff)
 ['book', 99, 'cookie']
-
 ---
 
 ### IS SOMETHING IN A LIST?
@@ -890,6 +890,160 @@ From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
     >>>print(pieces)
 stephen.marquard@uct.ac.za<br>
 ['stephen.marquard', 'uct.ac.za']
+
+----
+
+# CHAPTER 9 **DICTIONARIES** 
+
+### COLLECTIONS
+ 
+- Can store more than 1 value
+- Can have more than 1 *place* in the variable
+- (*so far, our variables have only 1 value- when we give it a new value, the original value is overwritten*)
+- **LIST**- a linear collection of values. Lookup by **position 0 ... length-1**
+- **DICTIONARY**- A linear collection of *key - value* pairs. Lookup by "**tag**" or "**key**"
+
+---
+
+### DICTIONARIES
+
+- Keeps entries in the order they were inserted
+- "**insertion order**" is NOT always "**sorted order**"
+
+---
+
+### LISTS (Review)
+
+- We **.append** values to the end of a List and look them up by position
+
+
+    cards = list()
+    cards.append(12)
+    cards.append(3)
+    cards.append(75)
+    print(cards)
+[12, 3, 75]
+    
+    print(cards[1])
+3
+
+- We insert values into a Dictionary using a key and retrieve them using a key
+
+
+    cards[1] = cards[1] + 2
+    print(cards)
+[12, 5, 75]
+
+---
+
+### COMPARING LISTS & DICTIONARIES
+
+
+    lst = list()                ddd = dict()
+    lst.append(21)              ddd['age'] = 21
+    lst.append(183)             ddd['course'] = 183
+    print(lst)                  print(ddd)
+[21, 183]                {'age': 21, 'course': 183}
+
+
+    lst[0] = 23                 ddd['age'] = 23
+    print(lst)                  print(ddd)
+[23, 183]                {'age': 23, 'course': 183'}
+
+---
+
+### DICTIONARY LITERALS *(Constants)*
+
+- Dictionary literals use curly braces and have **key : value** pairs
+- You can make an empty dictionary using empty curly braces
+
+
+    jjj = {'chuck': 1, 'fred': 42, 'jan': 100}
+    print(jjj)
+{'chuck': 1, 'fred': 42, 'jan': 100}
+
+
+    ooo = {}
+    print(ooo)
+{}
+
+---
+
+### COUNTING
+
+
+    ccc = dict()
+    ccc['dog'] = 1
+    ccc['cat'] = 1
+    ccc['cat'] = ['cat'] + 1
+    print(ccc)
+{'dog': 1, 'cat': 2}
+
+---
+
+### ADDING TO THE DICTIONARY
+
+
+    counts = dict()
+    names = ['dog', 'cat', 'mouse']
+    for name in names:
+        if name not in counts:
+            counts[name] = 1
+        else:
+            counts[name] = counts[name] + 1
+
+---
+
+### THE **get** METHOD FOR DICTIONARIES
+
+
+    if name in counts:
+        x = counts[name]
+    else:
+        x = 0
+
+
+    x = counts.get(name, 0)
+
+---
+
+### SIMPLIFIED COUNTING WITH **get()**
+
+
+    counts = dict()
+    names = ['dog', 'cat', 'dog', 'mouse',]
+    for name in names:
+        counts[name] = counts.get(name, 0) + 1
+    print(counts)
+{'dog': 2, 'cat': 1, 'mouse': 1}
+
+---
+
+### COUNTING PATTERN
+
+
+    counts = dict()
+    print('Enter a line of text:')
+    line = input("")
+
+    words = line.split()
+
+    print('Words:', words)
+
+    print('Counting...')
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+    print('Counts', counts)
+Enter a line of text:<br>
+the clown ran after the car and the car ran into the tent and the tent fell
+down on the clown and the car<br>
+Words: ['the', 'clown', 'ran', 'after', 'the', 'car', 'and', 'the', 'car', 'ran', 'into',
+'the', 'tent', 'and', 'the', 'tent', 'fell', 'down', 'on', 'the', 'clown', 'and', 'the',
+'car']<br>
+Counting…<br>
+Counts {'the': 7, 'clown': 2, 'ran': 2, 'after': 1, 'car': 3, 'and': 3, 'into': 1,
+'tent': 2, 'fell': 1, 'down': 1, 'on': 1}
+
 
 
 
